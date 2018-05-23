@@ -29,7 +29,7 @@ None
 
 ## Process
 
-1. Make a POST request to create a new module with `name: Textbook Access` and `position: 2`
+1. Make a POST request to create a new module with `name: 'Textbook Access'` and `position: 2`
 2. Make a PUT request to `publish` the module (cannot be done upon creation)
 
 ## Log Categories
