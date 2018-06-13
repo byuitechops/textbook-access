@@ -6,15 +6,6 @@
 const canvas = require('canvas-wrapper');
 
 module.exports = (course, stepCallback) => {
-    /* Only add the platforms your grandchild should run in */
-    var validPlatforms = ['online', 'pathway'];
-    var validPlatform = validPlatforms.includes(course.settings.platform);
-
-    /* If the item is marked for deletion or isn't a valid platform type, do nothing */
-    if (validPlatform !== true) {
-        stepCallback(null, course);
-        return;
-    }
 
     /* Make the new module */
     canvas.post(`/api/v1/courses/${course.info.canvasOU}/modules`, {
