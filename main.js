@@ -6,11 +6,16 @@
 const canvas = require('canvas-wrapper');
 
 module.exports = (course, stepCallback) => {
+    /* Determine what position to put the module in */
+    var position = 2;
 
+    if (course.settings.platform === 'campus') {
+        position = 1;
+    }
     /* Make the new module */
     canvas.post(`/api/v1/courses/${course.info.canvasOU}/modules`, {
         'module[name]': 'Textbook Access',
-        'module[position]': 2,
+        'module[position]': position,
     }, (err, newModule) => {
         if (err) {
             course.error(err);
