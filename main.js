@@ -26,7 +26,7 @@ module.exports = (course, stepCallback) => {
         }
         /* Make the new module */
         canvas.post(`/api/v1/courses/${course.info.canvasOU}/modules`, {
-            'module[name]': 'Textbook Access',
+            'module[name]': 'Textbook Information',
             'module[position]': position,
         }, (err, newModule) => {
             if (err) {
